@@ -15,7 +15,21 @@ body {
 }
 
 .user {
-    background-color: white;
+    background-color: hsl(0 0% 95%);
     min-height: 350px;
-    margin: 3em;
+    max-width: 90%;
+    margin: 2em auto;
+}
+
+.sections {
+    display: flex;
+}
+
+.card {
+    background-color: white;
+    height: 300px;
+    width: 20%;
+    text-align: center;
+    margin:  2em auto;
+    border-radius: 5%;
 }
