@@ -1,35 +1,108 @@
+/* Global resets and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
+  }
+  
+  body {
+    background-color: hsl(200, 56%, 57%);
+    line-height: 1.6;
+  }
+  
+  /* Header styling */
+  header {
     text-align: center;
-    margin: 3em;
-}
-
-body {
-    background-color: hsl(200 56% 57%);
-}
-
-.user {
-    background-color: hsl(0 0% 95%);
-    min-height: 350px;
-    max-width: 90%;
-    margin: 2em auto;
-}
-
-.sections {
+    margin: 2rem 0;
+  }
+  
+  /* Container for all users */
+  .users {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* User section styling */
+  .user {
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Flex container for cards */
+  .sections {
     display: flex;
-}
-
-.card {
-    background-color: white;
-    height: 300px;
-    width: 20%;
-    text-align: center;
-    margin:  2em auto;
-    border-radius: 5%;
-}
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  /* Card styling */
+  .card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header inside card */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Styling for the add-item button */
+  .add-item {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .add-item:hover {
+    color: #0056b3;
+  }
+  
+  /* Container for items with larger drop area */
+  .card-items {
+    flex: 1;
+    padding: 0.5rem;
+    overflow-y: auto;
+    min-height: 150px; /* Increased area for drop target */
+  }
+  
+  /* Draggable item styling */
+  .item {
+    background-color: #f1f1f1;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Styling for the delete button inside items */
+  .delete-item {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  
+  .delete-item:hover {
+    color: darkred;
+  }
+  

@@ -1,75 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban Board</title>
-    <link rel="styleSheet" href="./style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <header>
-        <h1>Kanban Board</h1>
-    </header>
-    <main>
-        <!--Div that contains all users-->
-        <div class="Users">
-            <!--User One-->
-            <div id="userOne" class="user">
-                <h3>User One</h3>
-                <div class="sections">
-                    <div class="card toDo">
-                        <h2>To Do</h2>
-                    </div>
-                    <div class="card workInProgress">
-                        <h2>Work In Progress</h2>
-                    </div>
-                    <div class="card testing">
-                        <h2>Testing</h2>
-                    </div>
-                    <div class="card done">
-                        <h2>Done</h2>
-                    </div>
-                </div>
+  <header>
+    <h1>Kanban Board</h1>
+  </header>
+  <main>
+    <div class="users">
+      <!-- User One -->
+      <section class="user">
+        <h2>User One</h2>
+        <div class="sections">
+          <div class="card to-do" data-category="to-do">
+            <div class="card-header">
+              <h3>To Do</h3>
+              <button class="add-item" aria-label="Add item">+</button>
             </div>
-            <!--User Two-->
-            <div id="userTwo" class="user">
-                <h3>User Two</h3>
-                <div class="sections">
-                    <div class="card toDo">
-                        <h2>To Do</h2>
-                    </div>
-                    <div class="card workInProgress">
-                        <h2>Work In Progress</h2>
-                    </div>
-                    <div class="card testing">
-                        <h2>Testing</h2>
-                    </div>
-                    <div class="card done">
-                        <h2>Done</h2>
-                    </div>
-                </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card in-progress" data-category="in-progress">
+            <div class="card-header">
+              <h3>In Progress</h3>
+              <button class="add-item" aria-label="Add item">+</button>
             </div>
-            <!--User Three-->
-            <div id="userThree" class="user">
-                <h3>User Three</h3>
-                <div class="sections">
-                    <div class="card toDo">
-                        <h2>To Do</h2>
-                    </div>
-                    <div class="card workInProgress">
-                        <h2>Work In Progress</h2>
-                    </div>
-                    <div class="card testing">
-                        <h2>Testing</h2>
-                    </div>
-                    <div class="card done">
-                        <h2>Done</h2>
-                    </div>
-                </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card testing" data-category="testing">
+            <div class="card-header">
+              <h3>Testing</h3>
+              <button class="add-item" aria-label="Add item">+</button>
             </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card done" data-category="done">
+            <div class="card-header">
+              <h3>Done</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
         </div>
-    </main>
-    
-    <script src="./script.js"></script>
+      </section>
+      
+      <!-- User Two (same structure as User One) -->
+      <section class="user">
+        <h2>User Two</h2>
+        <div class="sections">
+          <div class="card to-do" data-category="to-do">
+            <div class="card-header">
+              <h3>To Do</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card in-progress" data-category="in-progress">
+            <div class="card-header">
+              <h3>In Progress</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card testing" data-category="testing">
+            <div class="card-header">
+              <h3>Testing</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card done" data-category="done">
+            <div class="card-header">
+              <h3>Done</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- User Three (same structure as User One) -->
+      <section class="user">
+        <h2>User Three</h2>
+        <div class="sections">
+          <div class="card to-do" data-category="to-do">
+            <div class="card-header">
+              <h3>To Do</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card in-progress" data-category="in-progress">
+            <div class="card-header">
+              <h3>In Progress</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card testing" data-category="testing">
+            <div class="card-header">
+              <h3>Testing</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+          <div class="card done" data-category="done">
+            <div class="card-header">
+              <h3>Done</h3>
+              <button class="add-item" aria-label="Add item">+</button>
+            </div>
+            <div class="card-items" ondragover="allowDrop(event)" ondrop="dropItem(event)"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>
