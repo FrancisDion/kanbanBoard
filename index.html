@@ -13,7 +13,7 @@
   <main>
     <div class="users">
       <!-- User One -->
-      <section class="user">
+      <section class="user" id="user-one">
         <h2>User One</h2>
         <div class="sections">
           <div class="card to-do" data-category="to-do">
@@ -46,9 +46,9 @@
           </div>
         </div>
       </section>
-      
-      <!-- User Two (same structure as User One) -->
-      <section class="user">
+
+      <!-- User Two -->
+      <section class="user" id="user-two">
         <h2>User Two</h2>
         <div class="sections">
           <div class="card to-do" data-category="to-do">
@@ -81,9 +81,9 @@
           </div>
         </div>
       </section>
-      
-      <!-- User Three (same structure as User One) -->
-      <section class="user">
+
+      <!-- User Three -->
+      <section class="user" id="user-three">
         <h2>User Three</h2>
         <div class="sections">
           <div class="card to-do" data-category="to-do">
@@ -118,6 +118,32 @@
       </section>
     </div>
   </main>
+
+  <!-- Modal for adding new items -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <form id="itemForm">
+        <h3>Add New Item</h3>
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required />
+        <label for="itemColor">Item Color:</label>
+        <input type="color" id="itemColor" value="#f1f1f1" required />
+        <label for="itemUser">Assign to:</label>
+        <select id="itemUser" required>
+          <option value="user-one">User One</option>
+          <option value="user-two">User Two</option>
+          <option value="user-three">User Three</option>
+        </select>
+        <div class="modal-buttons">
+          <button type="submit">Add Item</button>
+          <button type="button" id="cancelModal">Cancel</button>
+        </div>
+        <!-- Hidden input to store the card category -->
+        <input type="hidden" id="cardCategory" />
+      </form>
+    </div>
+  </div>
+
   <script src="./script.js"></script>
 </body>
 </html>

@@ -72,12 +72,12 @@
     color: #0056b3;
   }
   
-  /* Container for items with larger drop area */
+  /* Container for items with larger drop area (dashed border removed) */
   .card-items {
     flex: 1;
     padding: 0.5rem;
     overflow-y: auto;
-    min-height: 150px; /* Increased area for drop target */
+    min-height: 150px;
   }
   
   /* Draggable item styling */
@@ -104,5 +104,49 @@
   
   .delete-item:hover {
     color: darkred;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content form label {
+    margin-top: 0.5rem;
+  }
+  
+  .modal-content form input,
+  .modal-content form select {
+    margin-top: 0.25rem;
+  }
+  
+  .modal-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
   
